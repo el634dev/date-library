@@ -111,22 +111,4 @@ class Date_Format extends Day {
     }
 }
 
-// Date Object can be initialized in different ways
-// const date = new Day()
-// String
-// const dateString = new Day('January 1, 1970')
-// Number Format
-// const dateNumber = new Day('9/26/1965')
-// Year, Month, Date, Hours, Mins
-// const yearFirst = new Day(2001, 4, 12, 16, 45)
-// Nested Date Object
-// const nestedDate = new Day(new D())
-
-// Get Current Date, no params
-// const currentDate = new Day()
-// Full year such as 2020 or 2024
-// console.log(currentDate.year)
-// Short Year such as 20 or 19
-// console.log(currentDate.yr)
-
 module.exports.Day = Day;
