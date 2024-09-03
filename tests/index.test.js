@@ -1,12 +1,13 @@
 const { Day } = require('../src/index');
 
-test('Test Year', ()  => {
+test('Should be current year', ()  => {
     const myDay = new Day();
     const myDate = new Date();
     expect(myDay.year).toBe(myDate.getFullYear())
 })
 
-test('Test Short Year', ()  => {
+// ---------------------------------------
+test('Should be the abbreviated year', ()  => {
     // const myDay = new Day();
     // const myDate = new Date();
 
@@ -14,13 +15,15 @@ test('Test Short Year', ()  => {
     // expect(myDay.shortYear).toBe(shortYear)
 })
 
-test('Test Month', () =>  {
+// ---------------------------------------
+test('Should be current month', () =>  {
     const myDay = new Day();
     const myDate = new Date();
     expect(myDay.month).toBe(myDate.getMonth())
 })
 
-test('Test Short Month', ()  => {
+// ---------------------------------------
+test('Should be the abbreviated month', ()  => {
 //     const myDay = new Day();
 //     const myDate = new Date();
 
@@ -28,14 +31,16 @@ test('Test Short Month', ()  => {
 //     expect(myDay.shortMonth).toBe(myMonth)
 })
 
-test('Test Day', () => {
+// ---------------------------------------
+test('Should be the current day', () => {
     const myDay = new Day();
     const myDate = new Date();
 
-    expect(myDay.day).toBe(myDate.getDay)
+    expect(myDay.day).toBe(myDate.getDay())
 })
 
-test('Test Short Day', () => {
+// ---------------------------------------
+test('Should be the abbreviated day', () => {
 //     const myDay = new Day();
 //     const myDate = new Date();
 
@@ -43,26 +48,30 @@ test('Test Short Day', () => {
 //     expect(myDay.shortMonth).toBe(myMonth)
 })
 
-test('Test Date', () => {
+// ---------------------------------------
+test('Should be the current date', () => {
     const myDay = new Day();
     const myDate = new Date();
 
-    expect(myDay.date).toBe(myDate.getDate)
+    expect(myDay.date).toBe(myDate.getDate())
 })
 
-test('Test Hours', () => {
+// ---------------------------------------
+test('Should have the current hours', () => {
     const myDay = new Day();
     const myDate = new Date();
     expect(myDay.hours).toBe(myDate.getHours())
 })
 
-test('Test Seconds', () => {
+// ---------------------------------------
+test('Should have the current seconds', () => {
     const myDay = new Day();
     const myDate = new Date();
     expect(myDay.seconds).toBe(myDate.getSeconds())
 })
 
-test('Test Minutes', () => {
+// ---------------------------------------
+test('Should have the current minutes', () => {
     const myDay = new Day();
     const myDate = new Date();
     expect(myDay.minutes).toEqual(myDate.getMinutes())
