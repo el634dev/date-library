@@ -1,15 +1,16 @@
 class Day {
-    constructor(...args) {
-        this._date = new Date(...args)
+    private _date: Date;
+    
+    constructor(...args: []) {
+        this._date = new Date(...args);
     }
 
     /**
      * Returns the current year
      * @param {Date} day - This is not used as input but as anchor to attach methods
      * @returns {Date} - the current year not in abbreviated form
-
     */
-    get year() {
+    get year(): number {
         return this._date.getFullYear()
     }
 
@@ -18,7 +19,7 @@ class Day {
      * @param {Date} day - This is not used as input but as anchor to attach methods
      * @returns {Date} - the current full year in abbreviated form
     */
-    get shortYear() {
+    get shortYear(): number {
         // Get the abbreviated year
         return this._date.getFullYear() % 100
     }
@@ -28,7 +29,7 @@ class Day {
      * @param {Date} day - This is not used as input but as anchor to attach methods
      * @returns {Date} - the current month
     */
-    get month() {
+    get month(): number {
         return this._date.getMonth()
     }
 
@@ -38,7 +39,7 @@ class Day {
      * @returns {Date} - the current month in abbreviated form, + 1 is to change to
      one-based system
     */
-    get shortMonth() {
+    get shortMonth(): number {
         return this._date.getMonth() % 100 + 1
     }
 
@@ -47,7 +48,7 @@ class Day {
      * @param {Date} day - This is not used as input but as anchor to attach methods
      * @returns {Date} - the current day
     */
-    get day() {
+    get day(): number {
         return this._date.getDay()
     }
 
@@ -57,7 +58,7 @@ class Day {
      * @returns {Date} the current day in abbreviated form, + 1 is to change to
      one-based system
     */
-    get shortDay() {
+    get shortDay(): number {
         return this._date.getDay() % 100 + 1
     }
 
@@ -66,7 +67,7 @@ class Day {
      * @param {Date} day - This is not used as input but as anchor to attach methods
      * @returns {Date} - the current date
     */
-    get date() {
+    get date(): number {
         return this._date.getDate()
     }
 
@@ -75,7 +76,7 @@ class Day {
      * @param {Date} day - This is not used as input but as anchor to attach methods
      * @returns {Date} - the current hour
     */
-    get hours() {
+    get hours(): number {
         return this._date.getHours()
     }
 
@@ -84,7 +85,7 @@ class Day {
      * @param {Date} day - This is not used as input but as anchor to attach methods
      * @returns {Date} - the current minutes
     */
-    get minutes() {
+    get minutes(): number {
         return this._date.getMinutes()
     }
 
@@ -93,23 +94,22 @@ class Day {
      * @param {Date} day - This is not used as input but as anchor to attach methods
      * @returns {Date}  - the current seconds such as 30
     */
-    get seconds() {
+    get seconds(): number {
         return this._date.getSeconds()
     }
-}
 
-class Date_Format extends Day {
-    constructor(_date) {
-        super(_date);
-        this._date = _date;
+    futureDate(date = new Date()) {
+        const difference: number = this._date.getTime() - date.getTime();
+        // Days difference, number of days that have pasted or in the future
+        const daysDifference: number = difference / 86400 / 1000;
     }
 
-    get MonthFirst() {
-        return this._date.format('m/d/y')
+    monthFirst() {
+        return this._date.toLocaleDateString('m/d/y')
     }
 
-    get YearFirst() {
-        return this._date.format('y/m/d')
+    yearFirst() {
+        return this._date.toLocaleDateString('y/m/d')
     }
 }
 
