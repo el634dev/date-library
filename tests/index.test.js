@@ -8,11 +8,11 @@ test('Should be current year', ()  => {
 
 // ---------------------------------------
 test('Should be the abbreviated year', ()  => {
-    // const myDay = new Day();
-    // const myDate = new Date();
+    const myDay = new Day();
+    const myDate = new Date();
 
-    // const shortYear = myDate.getFullYear % 100
-    // expect(myDay.shortYear).toBe(shortYear)
+    const shortYear = myDate.getFullYear() % 100
+    expect(myDay.shortYear).toBe(shortYear)
 })
 
 // ---------------------------------------
@@ -23,12 +23,12 @@ test('Should be current month', () =>  {
 })
 
 // ---------------------------------------
-test('Should be the abbreviated month', ()  => {
-//     const myDay = new Day();
-//     const myDate = new Date();
+test('Should be the abbreviated day', ()  => {
+    const myDay = new Day();
+    const myDate = new Date();
 
-//     const myMonth = myDate.getMonth % 100
-//     expect(myDay.shortMonth).toBe(myMonth)
+    const currentDay = myDate.getDay() % 100
+    expect(myDay.shortDay).toBe(currentDay + 1)
 })
 
 // ---------------------------------------
@@ -40,12 +40,12 @@ test('Should be the current day', () => {
 })
 
 // ---------------------------------------
-test('Should be the abbreviated day', () => {
-//     const myDay = new Day();
-//     const myDate = new Date();
+test('Should be the abbreviated month', () => {
+    const myDay = new Day();
+    const myDate = new Date();
 
-//     const myMonth = myDate.getMonth % 100
-//     expect(myDay.shortMonth).toBe(myMonth)
+    const myMonth = myDate.getMonth() % 100
+    expect(myDay.shortMonth).toBe(myMonth + 1)
 })
 
 // ---------------------------------------

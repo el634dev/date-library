@@ -4,9 +4,9 @@ class Day {
     }
 
     /**
-     * Formates the day either starting with the full year
-     * @param {Date} day
-     * @returns {Date} the current full year
+     * Returns the current year
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} - the current year not in abbreviated form
 
     */
     get year() {
@@ -14,9 +14,9 @@ class Day {
     }
 
     /**
-     * Formates the day either starting with getting the full year
-     * @param {Date} day
-     * @returns {Date} formatted as getting the current full year mod 100
+     * Returns the year in abbreviated form
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} - the current full year in abbreviated form
     */
     get shortYear() {
         // Get the abbreviated year
@@ -25,71 +25,73 @@ class Day {
 
     /**
      * Formates the day either starting with the month first
-     * @param {Date} day
-     * @returns {Date} formatted as month first
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} - the current month
     */
     get month() {
         return this._date.getMonth()
     }
 
     /**
-     * Formates the month by shorting the month to two digits
-     * @param {Date} day
-     * @returns {Date} formatted as month mod 100
+     * Returns the current month in abbreviated form
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} - the current month in abbreviated form, + 1 is to change to
+     one-based system
     */
     get shortMonth() {
-        return this._date.getMonth() % 100 
+        return this._date.getMonth() % 100 + 1
     }
 
     /**
-     * Formates the month by getting the current day
-     * @param {Date} day
-     * @returns {Date} the current day
+     * Returns the current day by getting the current day from getDay()
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} - the current day
     */
     get day() {
         return this._date.getDay()
     }
 
     /**
-     * Formates the month by getting the current day
-     * @param {Date} day
-     * @returns {Date} the current day mod 100 to shorten the day to two digits
+     * Returns the current day in abbreviated form
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} the current day in abbreviated form, + 1 is to change to
+     one-based system
     */
     get shortDay() {
-        return this._date.getDay() % 100
+        return this._date.getDay() % 100 + 1
     }
 
     /**
-     * Formates the month by getting the current date
-     * @param {Date} day
-     * @returns {Date} the current date
+     * Returns the current date
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} - the current date
     */
     get date() {
         return this._date.getDate()
     }
 
     /**
-     * Formates the month by getting the current hour
-     * @param {Date} day
-     * @returns {Date} the current hour
+     * Returns current hour such as 7 or 8 hours by getting the date from getHours()
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} - the current hour
     */
     get hours() {
         return this._date.getHours()
     }
 
     /**
-     * Formates the month by getting the current hour
-     * @param {Date} day
-     * @returns {Date} the current hour
+     * Returns the current minutes by getting the minutes from getMinutes()
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date} - the current minutes
     */
     get minutes() {
         return this._date.getMinutes()
     }
 
-     /**
-     * Formates the month by getting the seconds
-     * @param {Date} day
-     * @returns {Date} the seconds
+    /**
+     * Returns the current minutes by getting the seconds from getSeconds()
+     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @returns {Date}  - the current seconds such as 30
     */
     get seconds() {
         return this._date.getSeconds()
