@@ -28,7 +28,7 @@ Using yarn:
 ``$ yarn add @evacuatesw/date-library`
 
 ## License
-![MIT](https://github.com/el634dev/date-library/blob/main/LICENSE.txt)
+[MIT](https://github.com/el634dev/date-library/blob/main/LICENSE.txt)
 
 ## Keywords
 date javascript date object
