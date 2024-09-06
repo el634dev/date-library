@@ -27,6 +27,9 @@ Using npm:
 Using yarn:
 ``$ yarn add @evacuatesw/date-library`
 
+# NPM 
+[NPM Page](https://www.npmjs.com/package/@evacuatesw/date-library)
+
 ## License
 [MIT](https://github.com/el634dev/date-library/blob/main/LICENSE.txt)
 
