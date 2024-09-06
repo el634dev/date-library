@@ -93,7 +93,7 @@ var Day = /** @class */ (function () {
     Object.defineProperty(Day.prototype, "currentDate", {
         /**
          * Returns the current date
-         * @param {Date} day - This is not used as input but as anchor to attach methods
+         * @param {Date} date - This is not used as input but as anchor to attach methods
          * @returns {Date} - the current date
         */
         get: function () {
@@ -130,7 +130,7 @@ var Day = /** @class */ (function () {
         /**
          * Returns the current seconds by getting the seconds from getSeconds()
          * @param {Date} second - This is not used as input but as anchor to attach methods
-         * @returns {Date}  - the current seconds such as 30
+         * @returns {Date} - the current seconds such as 30
         */
         get: function () {
             return this._date.getSeconds();
@@ -138,17 +138,40 @@ var Day = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    /**
+     * Returns the difference between days to tell if a date is in the future or past
+     * @param {Date} date - Used to create a new Date object
+     * @returns {Date} - the difference bewteen the days
+    */
     Day.prototype.futureDate = function (date) {
         if (date === void 0) { date = new Date(); }
+        var currentDay = new Date();
+        var pastDay = new Date(date);
         var difference = this._date.getTime() - date.getTime();
-        // Days difference, number of days that have pasted or in the future
+        if (difference < 0) {
+            return "".concat(difference, " days in the future");
+        }
+        // Days difference is the number of days that have pasted or in the future
         var daysDifference = difference / 86400 / 1000;
+        return daysDifference;
     };
-    Day.prototype.monthFirst = function () {
-        return this._date.toLocaleDateString('m/d/y');
+    // -------------------------------
+    Day.prototype.monthFirst = function (date) {
+        if (date === void 0) { date = new Date(); }
+        var month = (date.getMonth() + 1).toString().padStart(2, '0');
+        var day = date.getDate().toString().padStart(2, '0');
+        // Get an abbreivated year without using the above function
+        var year = date.getFullYear().toString().slice(-2);
+        return "".concat(month, "/").concat(day, "/").concat(year);
     };
-    Day.prototype.yearFirst = function () {
-        return this._date.toLocaleDateString('y/m/d');
+    // -------------------------------
+    Day.prototype.yearFirst = function (date) {
+        if (date === void 0) { date = new Date(); }
+        var month = (date.getMonth() + 1).toString().padStart(2, '0');
+        var day = date.getDate().toString().padStart(2, '0');
+        // Get a abbreivated year without using the above function
+        var year = date.getFullYear().toString().slice(-2);
+        return "".concat(year, "/").concat(day, "/").concat(month);
     };
     return Day;
 }());

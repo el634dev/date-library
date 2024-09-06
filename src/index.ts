@@ -92,24 +92,50 @@ class Day {
     /**
      * Returns the current seconds by getting the seconds from getSeconds()
      * @param {Date} second - This is not used as input but as anchor to attach methods
-     * @returns {Date}  - the current seconds such as 30
+     * @returns {Date} - the current seconds such as 30
     */
     get currentSeconds(): number {
         return this._date.getSeconds()
     }
 
-    futureDate(date = new Date()) {
+    /**
+     * Returns the difference between days to tell if a date is in the future or past
+     * @param {Date} date - Used to create a new Date object
+     * @returns {Date} - the difference bewteen the days
+    */
+    futureDate(date = new Date()): number | string {
+        const currentDay = new Date();
+        const pastDay = new Date(date);
+
         const difference: number = this._date.getTime() - date.getTime();
-        // Days difference, number of days that have pasted or in the future
+        if (difference < 0) {
+            return `${difference} days in the future`
+        } 
+    
+        // Days difference is the number of days that have pasted or in the future
         const daysDifference: number = difference / 86400 / 1000;
+        
+        return daysDifference;
     }
 
-    monthFirst(): string {
-        return this._date.toLocaleDateString('m/d/y')
+    // -------------------------------
+    monthFirst(date = new Date()): string {
+        const month = (date.getMonth() + 1).toString().padStart(2, '0')
+        const day = date.getDate().toString().padStart(2, '0')
+        // Get an abbreivated year without using the above function
+        const year = date.getFullYear().toString().slice(-2);
+
+        return `${month}/${day}/${year}`
     }
 
-    yearFirst(): string {
-        return this._date.toLocaleDateString('y/m/d')
+    // -------------------------------
+    yearFirst(date = new Date()): string {
+        const month = (date.getMonth() + 1).toString().padStart(2, '0')
+        const day = date.getDate().toString().padStart(2, '0')
+        // Get a abbreivated year without using the above function
+        const year = date.getFullYear().toString().slice(-2);
+
+        return `${year}/${day}/${month}`
     }
 }
 

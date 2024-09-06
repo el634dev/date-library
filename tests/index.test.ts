@@ -76,3 +76,24 @@ test('Should have the current minutes', () => {
     const myDate = new Date();
     expect(myDay.currentMinutes).toEqual(myDate.getMinutes())
 })
+
+// ---------------------------------------
+test('Should have the difference between days', () => {
+    const myDay = new Day();
+    const myDate = new Date();
+    expect(myDay.currentDay - myDate.getDay()).toBe(0)
+})
+
+// ---------------------------------------
+test('Should have the month first', () => {
+    const myDay = new Day();
+    const myDate = new Date('2024/09/03');
+    expect(myDay.monthFirst(myDate)).toEqual('09/03/24')
+})
+
+// ---------------------------------------
+test('Should have the year first', () => {
+    const myDay = new Day();
+    const myDate = new Date('09/03/2024');
+    expect(myDay.yearFirst(myDate)).toEqual('24/03/09')
+})
