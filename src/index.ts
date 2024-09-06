@@ -64,7 +64,7 @@ class Day {
 
     /**
      * Returns the current date
-     * @param {Date} day - This is not used as input but as anchor to attach methods
+     * @param {Date} date - This is not used as input but as anchor to attach methods
      * @returns {Date} - the current date
     */
     get currentDate(): number {
