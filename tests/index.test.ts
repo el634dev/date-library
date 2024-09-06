@@ -36,7 +36,7 @@ test('Should be the current day', () => {
     const myDay = new Day();
     const myDate = new Date();
 
-    expect(myDay.day).toBe(myDate.getDay())
+    expect(myDay.currentDay).toBe(myDate.getDay())
 })
 
 // ---------------------------------------
@@ -53,26 +53,26 @@ test('Should be the current date', () => {
     const myDay = new Day();
     const myDate = new Date();
 
-    expect(myDay.date).toBe(myDate.getDate())
+    expect(myDay.currentDate).toBe(myDate.getDate())
 })
 
 // ---------------------------------------
 test('Should have the current hours', () => {
     const myDay = new Day();
     const myDate = new Date();
-    expect(myDay.hours).toBe(myDate.getHours())
+    expect(myDay.currentHours).toBe(myDate.getHours())
 })
 
 // ---------------------------------------
 test('Should have the current seconds', () => {
     const myDay = new Day();
     const myDate = new Date();
-    expect(myDay.seconds).toBe(myDate.getSeconds())
+    expect(myDay.currentSeconds).toBe(myDate.getSeconds())
 })
 
 // ---------------------------------------
 test('Should have the current minutes', () => {
     const myDay = new Day();
     const myDate = new Date();
-    expect(myDay.minutes).toEqual(myDate.getMinutes())
+    expect(myDay.currentMinutes).toEqual(myDate.getMinutes())
 })
