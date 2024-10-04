@@ -104,8 +104,8 @@ class Day {
      * @returns {Date} - the difference bewteen the days
     */
     futureDate(date = new Date()): number | string {
-        const currentDay = new Date();
-        const pastDay = new Date(date);
+        // const currentDay = new Date();
+        // const pastDay = new Date(date);
 
         const difference: number = this._date.getTime() - date.getTime();
         if (difference < 0) {
