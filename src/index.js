@@ -144,9 +144,9 @@ var Day = /** @class */ (function () {
      * @returns {Date} - the difference bewteen the days
     */
     Day.prototype.futureDate = function (date) {
+        // const currentDay = new Date();
+        // const pastDay = new Date(date);
         if (date === void 0) { date = new Date(); }
-        var currentDay = new Date();
-        var pastDay = new Date(date);
         var difference = this._date.getTime() - date.getTime();
         if (difference < 0) {
             return "".concat(difference, " days in the future");
@@ -176,3 +176,4 @@ var Day = /** @class */ (function () {
     return Day;
 }());
 module.exports.Day = Day;
+
