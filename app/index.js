@@ -1,5 +1,5 @@
 // Testing date-library, remove "type": "module" before running and after just add in the package.json
-const { Day } = require('../src/index');
+const { Day } = require('../dist/bundle.umd');
 const currentDate = new Day();
 
 // -------------------------
